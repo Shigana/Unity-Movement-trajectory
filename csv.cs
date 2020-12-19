@@ -32,7 +32,7 @@ public class csv : MonoBehaviour
             {
                 onetimepos = transform.position;
                 //StreamWriter sw = new StreamWriter(DataName, true, Encoding.GetEncoding("Shift_JIS"));
-                StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/"  + DataName, true);
+                StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/"  + DataName, true);　//If it is a stand-alone HMD, the path may not pass, so use the path of the persistent data directory.
                 string[] onepos = { time1.ToString(), onetimepos.x.ToString(), onetimepos.y.ToString(), onetimepos.z.ToString() };
                 string poslog = string.Join(",", onepos);
                 sw.WriteLine(poslog);
